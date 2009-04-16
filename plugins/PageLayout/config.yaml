@@ -1,0 +1,14 @@
+id: PageLayout
+name: Page Layout
+description: This plugin allows authors to select the specific Entry or Page template they want to use when publishing an entry or page respectively.
+author_name: Byrne Reese
+author_link: http://www.majordojo.com/
+version: 0.91
+
+callbacks:
+  MT::App::CMS::template_param.edit_entry: $PageLayout::PageLayout::Plugin::xfrm_edit
+  MT::App::CMS::cms_pre_save.page: $PageLayout::PageLayout::Plugin::pre_save
+  MT::App::CMS::cms_pre_save.entry: $PageLayout::PageLayout::Plugin::pre_save
+  MT::Template::pre_remove:  $PageLayout::PageLayout::Plugin::pre_remove
+
+#  build_file_filter: $PageLayout::PageLayout::Plugin::build_file_filter
